@@ -1,0 +1,25 @@
+.button_default {
+    color: white;
+    text-decoration: none;
+    user-select: none;
+    background: blue;
+    padding: .5em 1.5em;
+    outline: none;
+    border: 0.01em solid #b1b1b1;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.button_red {
+    color: white;
+    text-decoration: none;
+    user-select: none;
+    background: rgb(239, 15, 0);
+    padding: .5em 1.5em;
+    outline: none;
+    border: 1px solid #bf7c7c;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
