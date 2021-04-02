@@ -17,7 +17,7 @@ export const PATH = {
     TEST: "/test",
 }
 
-function Routes() {
+export const Routes = () => {
     return (
         <div>
             <Switch>

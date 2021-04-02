@@ -2,6 +2,7 @@ import React from "react";
 
 
 export const Register = () => {
-    return <>
-    </>
+    return <div>
+        Register Page
+    </div>
 }

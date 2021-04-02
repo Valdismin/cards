@@ -1,12 +1,14 @@
 import React from 'react';
-import {HashRouter} from "react-router-dom";
 import {Header} from "./components/header/Header";
+import {HashRouter} from "react-router-dom";
+import { Routes } from './routes/Routes';
 
 
 function App() {
   return (
       <HashRouter>
         <Header/>
+        <Routes/>
       </HashRouter>
   )
 }

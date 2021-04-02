@@ -1,0 +1,7 @@
+.routes{
+    list-style-type:none;
+    display: flex;
+}
+.routes li{
+    margin:0px 20px
+}

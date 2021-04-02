@@ -1,0 +1,9 @@
+.span {
+    padding: 5px 60px;
+    background-color: rgb(40, 34, 47);
+    border: solid 2px white;
+    border-radius: 20px;
+    outline: none;
+    color: white;
+    margin-bottom: 15px;
+}

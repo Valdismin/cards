@@ -1,5 +1,4 @@
 import React, {ChangeEvent, InputHTMLAttributes, DetailedHTMLProps} from "react";
-import SuperSelect from "../c5-SuperSelect/SuperSelect";
 
 type DefaultRadioPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
