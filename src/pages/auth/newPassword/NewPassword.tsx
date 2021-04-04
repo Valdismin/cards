@@ -4,8 +4,7 @@ import s from './NewPassword.module.css'
 import {PATH} from "../../../routes/Routes";
 import {useDispatch, useSelector} from "react-redux";
 import {stateType} from "../../../redux/redux-store";
-import {postNewPasswordTC} from "../../../redux/newPassword-reducer";
-import {log} from "util";
+import {postNewPasswordTC} from "../../../redux/lostPassword-reducer";
 
 export const NewPassword = () => {
 
@@ -13,7 +12,7 @@ export const NewPassword = () => {
     const [password2, setPassword2] = useState("")
     const {token} = useParams<{ token: string }>()
     const dispatch = useDispatch()
-    const redirect = useSelector<stateType, boolean>(state => state.newPassword.redirect)
+    const redirect = useSelector<stateType, boolean>(state => state.lostPassword.redirect)
     const [badPassword, setBadPassword] = useState(false)
     const error = useSelector<stateType, string | null>(state => state.lostPassword.error)
 
@@ -24,22 +23,15 @@ export const NewPassword = () => {
         setPassword2(e.currentTarget.value)
     }
 
-    console.log({token})
-
-    /* const changePassword = () => {
+     const changePassword = () => {
          if (password1 === password2) {
              return dispatch(postNewPasswordTC(password2, token))
          } else {
              return setBadPassword(true)
          }
 
-     }*/
+     }
 
-    const changePassword = () => {
-        if (password1 === password2) {
-            return alert(token)
-        }
-    }
 
     if (redirect) {
         return <Redirect to={PATH.NEW_PASS}/>

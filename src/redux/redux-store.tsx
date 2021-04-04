@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import {profileReducer} from "./porfile_reducer";
 import {authReducer} from "./auth-reducer";
 import {appReducer} from "./app-reducer";
-import {newPasswordReducer} from "./newPassword-reducer";
+
 import {lostPasswordReducer} from "./lostPassword-reducer";
 
 
@@ -12,7 +12,6 @@ let reducers = combineReducers({
     profile:profileReducer,
     auth:authReducer,
     app:appReducer,
-    newPassword:newPasswordReducer,
     lostPassword:lostPasswordReducer
 })
 

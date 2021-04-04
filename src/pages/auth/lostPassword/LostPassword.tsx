@@ -2,17 +2,18 @@ import React, {ChangeEvent, useState} from "react";
 import s from "./LostPassword.module.css"
 import {useDispatch, useSelector} from "react-redux";
 import {stateType} from "../../../redux/redux-store";
-import {postEmailTC} from "../../../redux/lostPassword-reducer";
+import {postEmailTC, setResponseError} from "../../../redux/lostPassword-reducer";
 
 export const LostPassword = () => {
 
     const error = useSelector<stateType, string | null>(state => state.lostPassword.error)
     const [email, setEmail] = useState("")
-    const redirect = useSelector<stateType, boolean>(state => state.newPassword.redirect)
+    const redirect = useSelector<stateType, boolean>(state => state.lostPassword.redirect)
     const dispatch = useDispatch()
 
     const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setEmail(e.currentTarget.value)
+        dispatch(setResponseError(null))
     }
 
     const postEmail = () => {
