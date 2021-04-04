@@ -9,7 +9,6 @@ import {postEmailTC} from "../../../redux/lostPassword-reducer";
 export const LostPassword = () => {
 
     const error = useSelector<stateType, string | null>(state => state.lostPassword.error)
-    const redirect = useSelector<stateType, boolean>(state => state.lostPassword.redirect)
     const [email, setEmail] = useState("")
     const dispatch = useDispatch()
 
@@ -21,9 +20,6 @@ export const LostPassword = () => {
         return dispatch(postEmailTC(email))
     }
 
-    if (redirect) {
-        return <Redirect to={PATH.NEW_PASS}/>
-    }
 
     return <div className={s.main}>
         <h1>Укажите email или телефон</h1>
