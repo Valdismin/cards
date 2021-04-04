@@ -34,8 +34,9 @@ export const NewPassword = () => {
 
 
     if (redirect) {
-        return <Redirect to={PATH.NEW_PASS}/>
+        return <Redirect to={PATH.LOGIN}/>
     }
+
 
     return <div className={s.main}>
         <h1>Введите новый пароль</h1>

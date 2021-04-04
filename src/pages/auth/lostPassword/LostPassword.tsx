@@ -22,7 +22,7 @@ export const LostPassword = () => {
 
 
     return <div>
-        {redirect ? <div>We have sent you a message with a link to change your password to this address:{email}</div> :
+        {redirect ? <h3 className={s.message}>We have sent you a message with a link to change your password to this address:{email}</h3> :
             <div className={s.main}>
                 <h1>Укажите email или телефон</h1>
                 <h3>Пожалуйста, укажите email или телефон, который вы использовали для входа на сайт</h3>
