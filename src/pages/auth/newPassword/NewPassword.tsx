@@ -5,6 +5,7 @@ import {PATH} from "../../../routes/Routes";
 import {useDispatch, useSelector} from "react-redux";
 import {stateType} from "../../../redux/redux-store";
 import {postNewPasswordTC} from "../../../redux/newPassword-reducer";
+import {log} from "util";
 
 export const NewPassword = () => {
 
@@ -13,7 +14,7 @@ export const NewPassword = () => {
     const {token} = useParams<{ token: string }>()
     const dispatch = useDispatch()
     const redirect = useSelector<stateType, boolean>(state => state.newPassword.redirect)
-    const [badPassword,setBadPassword] = useState(false)
+    const [badPassword, setBadPassword] = useState(false)
     const error = useSelector<stateType, string | null>(state => state.lostPassword.error)
 
     const changePassword1 = (e: ChangeEvent<HTMLInputElement>) => {
@@ -23,13 +24,21 @@ export const NewPassword = () => {
         setPassword2(e.currentTarget.value)
     }
 
+    console.log({token})
+
+    /* const changePassword = () => {
+         if (password1 === password2) {
+             return dispatch(postNewPasswordTC(password2, token))
+         } else {
+             return setBadPassword(true)
+         }
+
+     }*/
+
     const changePassword = () => {
         if (password1 === password2) {
-            return dispatch(postNewPasswordTC(password2, token))
-        } else {
-            return setBadPassword(true)
+            return alert(token)
         }
-
     }
 
     if (redirect) {
