@@ -1,4 +1,5 @@
 import {lostPasswordAPI} from "../api/api";
+import {changeRedirectStatus} from "./newPassword-reducer";
 
 
 let initialState = {
@@ -27,6 +28,7 @@ export const postEmailTC = (email: string) =>
     async (dispatch: any) => {
         try {
             await lostPasswordAPI.postEmail(email)
+            dispatch(changeRedirectStatus(true))
         } catch (e) {
             const error = e.response ? e.response.data.error : (e.message + ", more details in the console");
             dispatch(setResponseError(error))
