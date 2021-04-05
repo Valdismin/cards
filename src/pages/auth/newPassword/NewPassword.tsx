@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {stateType} from "../../../redux/redux-store";
 import {postNewPasswordTC} from "../../../redux/lostPassword-reducer";
 
+
 export const NewPassword = () => {
 
     const [password1, setPassword1] = useState("")
